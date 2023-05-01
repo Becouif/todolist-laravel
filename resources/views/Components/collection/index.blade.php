@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('Components.layouts.main')
 @section('content')
 
   <div class="container-fluid">
@@ -26,33 +26,28 @@
                     <thead class="thead-light">
                       <tr>
                         <th>ID</th>
-                        <th>Lati se</th>
+                        <th>Oruko</th>
                         <th>Apejuwe</th>
-                        <th>Akojo</th>
                         <th>-</th>
                         <th>-</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @if (is_countable($todoitems) && count($todoitems)>0)
-                      @foreach ($todoitems as $key=>$todoitem)
+                      @if (count($collections)>0)
+                      @foreach ($collections as $key=>$collection)
                       <tr>
                         <td>{{$key+1}}</td>
-                        <td>{{ $todoitem->name }}</td>
-                        <td>{!! $todoitem->description !!}</td>
-                        
-                        <td>{{$todoitem->collection->name ?? 'None'}}</td>
-                        
-
-                        <td><a href="{{route('todoitem.edit',[$todoitem->id])}}"><button type="submit" class="btn btn-sm btn-secondary">Edit</button></a></td>
-                        <td><form action="{{route('todoitem.destroy',[$todoitem->id])}}" method="post">@csrf
+                        <td>{{ $collection->name }}</td>
+                        <td>{!! $collection->description !!}</td>
+                        <td><a href="{{route('collection.edit',[$collection->id])}}"><button type="submit" class="btn btn-sm btn-secondary">Edit</button></a></td>
+                        <td><form action="{{route('collection.destroy',[$collection->id])}}" method="post">@csrf
                           {{ method_field('DELETE') }}
                           <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                         </form></td>
                       </tr>
                       @endforeach
                       @else 
-                      <td><h6>No todo created yet| Ko si lati se ti o seda</h6></td>
+                      <td><h6>No Collection| Kosi Akojo ti o seda</h6></td>
                       @endif
                     </tbody>
                   </table>

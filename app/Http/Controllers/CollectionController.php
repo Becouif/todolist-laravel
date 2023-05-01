@@ -12,7 +12,7 @@ class CollectionController extends Controller
     public function index()
     {
         $collections = Collection::get();
-        return view('collection.index',compact('collections'));
+        return view('Components.collection.index',compact('collections'));
     }
 
     /**
@@ -20,7 +20,7 @@ class CollectionController extends Controller
      */
     public function create()
     {
-        return view('collection.create');
+        return view('Components.collection.create');
     }
 
     /**
@@ -36,7 +36,7 @@ class CollectionController extends Controller
             'description'=> $request->description
         ]);
         notify()->success('Akojo Successfully created');
-        return redirect()->route('collection.index');
+        return redirect()->route('Components.collection.index');
 
     }
 
@@ -55,7 +55,7 @@ class CollectionController extends Controller
     {
         //
         $collection = Collection::find($id);
-        return view('collection.edit',compact('collection'));
+        return view('Components.collection.edit',compact('collection'));
     }
 
     /**
@@ -69,7 +69,7 @@ class CollectionController extends Controller
         $collection->save();
 
         notify()->success('Akojo Successfully updated');
-        return redirect()->route('collection.index');
+        return redirect()->route('Components.collection.index');
 
     }
 
@@ -81,7 +81,7 @@ class CollectionController extends Controller
         $collection = Collection::find($id);
         $collection->delete();
         notify()->success('Akojo Successfully deleted');
-        return redirect()->route('collection.index');
+        return redirect()->route('Components.collection.index');
 
     }
 }

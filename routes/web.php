@@ -19,14 +19,9 @@ use App\Http\Controllers\TodoitemController;
 // });
 
 Route::get('/', function(){
-    return view('collection.create');
+    return view('Components.collection.create');
 });
 
-
-
-Route::get('/index', function(){
-    return view('layouts.master');
-});
 
 Route::resource('collection',CollectionController::class);
 Route::resource('todoitem',TodoitemController::class);

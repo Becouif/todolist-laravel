@@ -1,19 +1,19 @@
 <!-- header section  -->
 
-@include('layouts.header')
+@include('Components.layouts.header')
 
   
     <!-- Sidebar -->
-    @include('layouts.sidebar')
+    @include('Components.layouts.sidebar')
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <!-- TopBar -->
-        @include('layouts.topbar')
+        @include('Components.layouts.topbar')
         <!-- Topbar -->
 
         <!-- Container Fluid-->
-        @include('layouts.container')
+        @yield('content')
         <!---Container Fluid-->
       </div>
-     @include('layouts.footer')
+     @include('Components.layouts.footer')

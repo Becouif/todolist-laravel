@@ -12,7 +12,7 @@ class TodoitemController extends Controller
     public function index()
     {
         $todoitems = Todoitem::get();
-        return view('todoitem.index',compact('todoitems'));
+        return view('Components.todoitem.index',compact('todoitems'));
     }
 
     /**
@@ -21,7 +21,7 @@ class TodoitemController extends Controller
     public function create()
     {
         //
-        return view('todoitem.create');
+        return view('Components.todoitem.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class TodoitemController extends Controller
             ]);
 
         notify()->success('Lati se Successfully created');
-        return redirect()->route('todoitem.index');
+        return redirect()->route('Components.todoitem.index');
 
     }
 
@@ -60,7 +60,7 @@ class TodoitemController extends Controller
     public function edit(string $id)
     {
         $todoitem = Todoitem::find($id);
-        return view('todoitem.edit',compact('todoitem'));
+        return view('Components.todoitem.edit',compact('todoitem'));
     }
 
     /**
@@ -75,7 +75,7 @@ class TodoitemController extends Controller
         $todoitem->collection_id = $request->collection;
         $todoitem->save();
         notify()->success('Lati se Successfully updated');
-        return redirect()->route('todoitem.index');
+        return redirect()->route('Components.todoitem.index');
     }
 
     /**
@@ -86,6 +86,6 @@ class TodoitemController extends Controller
         $todoitem = Todoitem::find($id);
         $todoitem->delete();
         notify()->success('Lati se Successfully deleted');
-        return redirect()->route('todoitem.index');
+        return redirect()->route('Components.todoitem.index');
     }
 }
