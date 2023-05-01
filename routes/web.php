@@ -18,7 +18,9 @@ use App\Http\Controllers\TodoitemController;
 //     return view('welcome');
 // });
 
-Route::get('/', [TodoitemController::class, 'index']);
+Route::get('/', function(){
+    return view('collection.create');
+});
 
 
 
