@@ -13,6 +13,7 @@
         "laravel/ui": "^4.0",
         "mckenziearts/laravel-notify": "^2.4",
         "heroku/heroku-buildpack-php": "*"
+        
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -21,7 +22,8 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
         "phpunit/phpunit": "^10.0",
-        "spatie/laravel-ignition": "^2.0"
+        "spatie/laravel-ignition": "^2.0",
+        "heroku/heroku-buildpack-php": "*"
     },
     "autoload": {
         "psr-4": {
