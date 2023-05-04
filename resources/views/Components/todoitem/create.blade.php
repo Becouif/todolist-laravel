@@ -45,7 +45,7 @@
           </div>
 
           <div class="form-group">
-            <button type="submit" class="btn btn-primary">Fi si le | Submit</button>
+            <button type="submit" class="btn btn-primary bg-primary">Fi si le | Submit</button>
           </div>
         </form>
       </div>
